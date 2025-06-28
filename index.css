@@ -15,10 +15,6 @@ body {
     text-align: center;
 }
 
-.flexbox{
-    display: flex;
-}
-
 /* HEADER STYLES */
 
 header{
@@ -54,39 +50,33 @@ header{
 
 .items-section{
     margin: 0 auto 10px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    box-sizing: border-box;
 }
 
 .item{
-    position: absolute;
-    width: 90%;
+    width: 100%;
     height: 140px;
-    left: 46px;
     border-bottom: 1px solid #D2D2D2;
-    padding: 0px;
+    padding: 2px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 28px;
-    gap: 10px;
 }
 
-.Pizza{
-    top: 234px;
-}
-
-.Hamburger{
-    top: 419px;
-}
-
-.Beer{
-    top: 604px;
+.pic-and-desc-flex{
+    display: flex;
+    align-items: center;
 }
 
 .item-pic{
-    float: left;
     font-size: 78.72px;
     width: 70PX;
-    height: 89px;
-    top: 234px;
-    left: 46px;
     opacity: 0.72;
     margin: 10px 50px 3px 3px;
     font-family: Inter;
@@ -114,11 +104,8 @@ header{
 }
 
 .add-btn{
-    position: absolute;
     width: 50px;
     height: 50px;
-    top: 50px;
-    left: 430px;
     border-width: 1.5px solid #DEDEDE;
     border-radius: 50%;
     color: #3C3C3C;
@@ -126,7 +113,8 @@ header{
 
 /* PAYMENT/ORDER SECTION */
 .payment-section {
-        margin-top: 38pc;
+        margin-top: 2pc;
+
     }
 
 .order-summary {
@@ -255,10 +243,10 @@ header{
     padding: 1em;
     font-size: 1.5em;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .disabled{
     color: gray;
     cursor: not-allowed;
 }
-
