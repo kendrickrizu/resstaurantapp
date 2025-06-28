@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    font-family: Smythe;
+    color: black;
+} 
+
+/* COMMON STYLES */
+
+
+.header-title, .header-description{
+    margin-top: 0;
+}
+
+.order-header, .header-title{
+    text-align: center;
+}
+
+.flexbox{
+    display: flex;
+}
+
+/* HEADER STYLES */
+
+header{
+    background-image: url("/BurgerBg.png");
+    background-size: cover;
+    height: 167px;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.header-title{
+    position: absolute;
+    height: 24px;
+    top: 46px;
+    left: 46px; 
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.header-description{
+    position: absolute;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 13px;
+    height: 8px;
+    top: 89px;
+    left: 46px;
+}
+
+/* ITEMS SECTION */
+
+.items-section{
+    margin: 0 auto 10px;
+}
+
+.item{
+    position: absolute;
+    width: 90%;
+    height: 140px;
+    left: 46px;
+    border-bottom: 1px solid #D2D2D2;
+    padding: 0px;
+    display: flex;
+    font-size: 28px;
+    gap: 10px;
+}
+
+.Pizza{
+    top: 234px;
+}
+
+.Hamburger{
+    top: 419px;
+}
+
+.Beer{
+    top: 604px;
+}
+
+.item-pic{
+    float: left;
+    font-size: 78.72px;
+    width: 70PX;
+    height: 89px;
+    top: 234px;
+    left: 46px;
+    opacity: 0.72;
+    margin: 10px 50px 3px 3px;
+    font-family: Inter;
+    line-height: 98.4px;
+    letter-spacing: -2%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.item-title{
+   margin-top: 20px;
+   margin-bottom: 0;
+}
+
+.item-description{
+   margin: 0;
+   font-size: 16px;
+   color: #8B8B8B;
+   font-family: sans-serif;
+}
+
+.item-price{
+    margin: 0;
+    font-size: 20px;
+}
+
+.add-btn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    left: 430px;
+    border-width: 1.5px solid #DEDEDE;
+    border-radius: 50%;
+    color: #3C3C3C;
+}
+
+/* PAYMENT/ORDER SECTION */
+.payment-section {
+        margin-top: 38pc;
+    }
+
+.order-summary {
+    width: 85%;
+    margin: 0 auto 10px;
+    font-weight: 400;
+    font-size: 16px;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+    font-family: smythe;
+}
+
+.order {
+    box-sizing: border-box;
+    background-color: rgb(247, 244, 244);
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 0.5pc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#item-name, #item-price{
+    font-size: 1.3em;
+}
+
+#item-name{
+    width: 110px;
+}
+
+#item-btns{
+    display: flex;
+    gap: 3px;
+}
+
+#item-quantity{
+    background-color: white;
+    font-weight: bolder;
+    border: 2px solid green;
+    width: 30px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#item-price{
+    width: 30px;
+}
+
+#item-btns button {
+    background-color: rgb(243, 242, 242);
+    border: 1.9px groove green;
+    border-radius: 40%;
+    font-weight: bolder;
+    color: green;
+    font-family: Verdana;
+    cursor: pointer;
+}
+
+.total-price {
+    width: 83%;
+    margin: 0 auto 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+}
+
+.order-btn {
+    margin: 20px auto;
+    width: 150px;
+}
+
+.order-btn button {
+    padding: 7px 14px;
+    background-color: green;
+    border: 2px solid green;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+
+/* PAYMENT DIALOGUE BOX */
+#payment-box{
+    position: fixed;
+    top: 30vh;
+    width: 60%;
+    left: 20%;
+    right: 20%;
+    background-color: white;
+    border: 2px solid green;
+    box-shadow: 2px 1px 1pc black;
+    padding: 1em;
+    text-align: center;
+    display: none;
+}
+
+#payment-box > h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.7rem;
+}
+
+#payment-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#payment-form input{
+    padding:  1em;
+    text-transform: capitalize;
+}
+
+#payment-form button{
+    padding: 0.7em 1em;
+    background-color: green;
+    border: 3px solid green;
+    font-weight: bolder;
+    color: white;
+}
+
+.payment-message{
+    background-color: rgb(187, 243, 187);
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.disabled{
+    color: gray;
+    cursor: not-allowed;
+}
+

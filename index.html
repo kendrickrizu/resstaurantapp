@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smythe&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="header-title">Kenny’s Diner</h1>
+        <h2 class="header-description">The best burgers and pizzas in town.</h2>
+    </header>
+    <main>
+        <section class="items-section" id="items-section">
+
+
+        </section>
+
+        <section class="payment-section" id="payment-section">
+           
+        </section>
+    </main>
+
+    <div id="payment-box">
+      <h1>Enter Card Details</h1>
+      <form id="payment-form">
+        <input id="payer-name-input" type="text" minlength="5" maxlength="20"  required placeholder="Enter Your Name">
+        <input type="number" minlength="16" maxlength="16" required placeholder="Enter Your Card Number">
+        <input type="number" minlength="3" maxlength="3" required placeholder="Enter CVV">
+        <button type="submit" id="payment-btn">Pay</button>
+      </form>
+    </div>
+
+
+    <script src="index.js" type="module"></script>
+    
+</body>
+
+</html>

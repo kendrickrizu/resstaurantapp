@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smythe&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="header-title">Jimmy’s Diner</h1>
+        <h2 class="header-description">The best burgers and pizzas in town.</h2>
+    </header>
+    <main>
+        <section class="items-section" id="items-section">
+
+
+        </section>
+
+        <section class="payment-section" id="payment-section">
+
+        </section>
+    </main>
+
+    
+</body>
+
+
+<script>
+const menuArray = [
+  {
+    name: "Burger",
+    ingredients: ["Beef", "Cheese", "Lettuce"],
+    id: 0,
+    price: 8,
+    emoji: "🍔"
+  },
+]
+
+const itemSection = document.getElementById("items-section");
+const paymentSection = document.getElementById("payment-section");
+
+let cartItems = {};
+
+document.addEventListener("click", function (e) {
+  if (e.target.dataset.add) {
+    addItem(parseInt(e.target.dataset.add));
+  } else if (e.target.dataset.inc) {
+    updateQuantity(parseInt(e.target.dataset.inc), 1);
+  } else if (e.target.dataset.dec) {
+    updateQuantity(parseInt(e.target.dataset.dec), -1);
+  }
+});
+
+function addItem(itemId) {
+  const item = menuArray.find((i) => i.id === itemId);
+  if (cartItems[itemId]) return;
+
+  cartItems[itemId] = { ...item, quantity: 1 };
+  renderOrder();
+  disableAddButton(itemId);
+}
+
+function updateQuantity(itemId, delta) {
+  if (cartItems[itemId]) {
+    cartItems[itemId].quantity += delta;
+    if (cartItems[itemId].quantity <= 0) {
+      delete cartItems[itemId];
+      enableAddButton(itemId);
+    }
+    renderOrder();
+  }
+}
+
+function renderOrder() {
+  let totalPrice = 0;
+  let orderedItem = "";
+
+  for (const key in cartItems) {
+    const item = cartItems[key];
+    const itemTotal = item.price * item.quantity;
+    totalPrice += itemTotal;
+
+    orderedItem += `
+      <div class="order-item">
+        <span>${item.emoji} ${item.name}</span>
+        <span>$${item.price} x ${item.quantity} = $${itemTotal}</span>
+        <div class="qty-buttons">
+          <button data-dec="${item.id}">–</button>
+          <button data-inc="${item.id}">+</button>
+        </div>
+      </div>
+    `;
+  }
+
+  paymentSection.innerHTML = Object.keys(cartItems).length
+    ? `
+      <h1 class="order-header">YOUR ORDER</h1>
+      <div class="order-summary">${orderedItem}</div>
+      <p class="total-price">
+        <span>TOTAL PRICE:</span> <span>$${totalPrice}</span>
+      </p>
+      <div class="order-btn">
+        <button type="submit">Compute Order</button>
+      </div>`
+    : "";
+}
+
+function renderItems() {
+  let itemsHtml = "";
+
+  for (const item of menuArray) {
+    itemsHtml += `
+      <div class="${item.name} item">
+        <p class="item-pic">${item.emoji}</p>
+        <div>
+          <h2 class="item-title">${item.name}</h2>
+          <p class="item-description">${item.ingredients.join(", ")}</p>
+          <p class="item-price">$${item.price}</p>
+        </div>
+        <button class="add-btn" id="add-btn-${item.id}" data-add="${item.id}">Add</button>
+      </div>
+    `;
+  }
+
+  itemSection.innerHTML = itemsHtml;
+}
+
+function disableAddButton(id) {
+  const btn = document.getElementById(`add-btn-${id}`);
+  if (btn) {
+    btn.disabled = true;
+    btn.innerText = "Added";
+    btn.classList.add("disabled");
+  }
+}
+
+function enableAddButton(id) {
+  const btn = document.getElementById(`add-btn-${id}`);
+  if (btn) {
+    btn.disabled = false;
+    btn.innerText = "Add";
+    btn.classList.remove("disabled");
+  }
+}
+
+renderItems();
+
+</script>
+
+</html>
