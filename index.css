@@ -67,6 +67,7 @@ header{
     justify-content: space-between;
     align-items: center;
     font-size: 28px;
+    border: 2PX SOLID RED;
 }
 
 .pic-and-desc-flex{
@@ -78,7 +79,7 @@ header{
     font-size: 78.72px;
     width: 70PX;
     opacity: 0.72;
-    margin: 10px 50px 3px 3px;
+    margin: 10px 0.5em 3px -0.1em ;
     font-family: Inter;
     line-height: 98.4px;
     letter-spacing: -2%;
@@ -249,4 +250,18 @@ header{
 .disabled{
     color: gray;
     cursor: not-allowed;
+}
+
+@media screen and (max-width: 480px) {
+  .item-title{
+   margin: 0;
+   font-size: 1.3em;
+}
+
+.item-description{
+   margin: 0;
+   font-size: 0.5em;
+   color: #8B8B8B;
+   font-family: sans-serif;
+}
 }
