@@ -99,11 +99,13 @@ function renderItems() {
   for (const item of menuArray) {
     itemsHtml += `
       <div class="${item.name} item">
-        <p class="item-pic">${item.emoji}</p>
+      <div class = "pic-and-desc-flex">
+        <span class="item-pic">${item.emoji}</span>
         <div>
           <h2 class="item-title">${item.name}</h2>
           <p class="item-description">${item.ingredients.join(", ")}</p>
           <p class="item-price">₦${item.price}</p>
+        </div>
         </div>
         <button class="add-btn" id="add-btn-${item.id}" data-add= "${item.id}">+</button>
       </div>
